@@ -1,0 +1,14 @@
+# Bump app version
+
+bump-app-version() {
+  if test ! "$(uname)" = "Darwin"
+  then
+    exit 0
+  fi
+  local VERSION=$1
+  if [ -z $VERSION ] ; then
+    echo "No version specified; v[major].[minor].[patch]"
+    return
+  fi
+  agvtool new-marketing-version "$VERSION"
+}

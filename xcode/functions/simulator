@@ -1,0 +1,14 @@
+# Xcode helper, start app on simulator with specific deeplink
+
+simulator() {
+  if test ! "$(uname)" = "Darwin"
+  then
+    exit 0
+  fi
+  local URL=$1
+  if [ -z $URL ] ; then
+    echo "No url specified"
+    return
+  fi
+  xcrun simctl openurl booted "$URL"
+}

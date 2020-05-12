@@ -1,0 +1,14 @@
+# Xcode helper, add media to photo library in simulator
+
+simulator-add-media() {
+  if test ! "$(uname)" = "Darwin"
+  then
+    exit 0
+  fi
+  local PATH=$1
+  if [ -z $URL ] ; then
+    echo "No path to media given"
+    return
+  fi
+  xcrun simctl addmedia booted "$PATH"
+}

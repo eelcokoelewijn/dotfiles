@@ -13,10 +13,20 @@ then
   # Install the correct homebrew for each OS type
   if test "$(uname)" = "Darwin"
   then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "  Installing Xcode commandline tools."
+    xcode-select --install
+
+    echo "  Installing Homebrew."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
   then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+    echo "  Installing Homebrew aka Linuxbrew."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+    echo "  Installing dev-tools."
+    sudo yum groupinstall 'Development Tools'
+    sudo yum install curl file git
+    sudo yum install libxcrypt-compat # needed by Fedora 30 and up  
   fi
 
 fi

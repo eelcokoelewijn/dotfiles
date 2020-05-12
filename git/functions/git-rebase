@@ -1,0 +1,10 @@
+# Git interactive rebase
+
+git-rebase() {
+  local COMMITHASH=$1
+  if [ -z $COMMITHASH ] ; then
+    echo "No commit hash specified to start interactive rebase"
+    return
+  fi
+  git rebase -i "$COMMITHASH^"
+}
