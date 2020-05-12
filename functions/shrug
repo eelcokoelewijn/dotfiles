@@ -1,0 +1,5 @@
+# Shurg ascii art
+
+shrug() { 
+    echo -n "¯\_(ツ)_/¯" | pbcopy; 
+}

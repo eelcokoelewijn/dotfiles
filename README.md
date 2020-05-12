@@ -1,4 +1,4 @@
-# holman does dotfiles
+# eelco does dotfiles
 
 Your dotfiles are how you personalize your system. These are mine.
 
@@ -45,12 +45,42 @@ There's a few special files in the hierarchy.
   but still keep those autoloaded files in your home directory. These get
   symlinked in when you run `script/bootstrap`.
 
+## resources
+
+- [dotfiles.github](https://dotfiles.github.io)
+
 ## install
 
-Run this:
+### dependencies
+
+Installed using `script/install` or while bootstrapping `script/bootstrap`.  
+- [Homebrew](https://brew.sh), include in installer script.
+- [rbenv](https://github.com/rbenv/rbenv), include in installer script.  Oh-my-zsh `rbenv` plugin provides `$PATH` setup.  
+  - list all available versions: `rbenv install -l`
+  - install a Ruby version: `rbenv install 2.7.1`
+  - select the Ruby version: `rbenv global 2.7.1`
+- [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)(theme: cloud); (plugins: git, rbenv, brew, common-aliases, vscode, swiftpm, direnv); see `oh-my-zsh/config.zsh`. `rbenv` plugin provides `$PATH` setup.
+- [nodenv](https://github.com/nodenv/nodenv), include in installer script.
+- [direnv](https://direnv.net), include in installer script. Setup handled by oh-my-zsh plugin.
+
+### xcode
+
+Xcode installer and version manager [xcode-install](https://github.com/xcpretty/xcode-install), include in installer script.
+- `xcversion list` for xcode-install options, to install an Xcode version: `xcversion install "11.5"`.
+
+### vim plugins
+
+Installed using git-clone, see `vim/install.sh`.
+- [auto-pairs](https://github.com/jiangmiao/auto-pairs)
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+- [vim-surround](https://github.com/tpope/vim-surround)
+- [lightline](https://github.com/itchyny/lightline.vim)
+- [rainbow](https://github.com/luochen1990/rainbow)
+
+### get started
 
 ```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
+git clone https://github.com/eelcokoelewijn/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
@@ -65,6 +95,14 @@ which sets up a few paths that'll be different on your particular machine.
 defaults, and so on. Tweak this script, and occasionally run `dot` from
 time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
+
+## improvements
+
+Zsh completion now works as expected; removed: `setopt complete_aliases` from `zsh/config.zsh`.
+See [issue](https://github.com/ohmyzsh/ohmyzsh/issues/4064) for more information.
+
+Supports symlinked dotfiles in sub-folder of `$HOME`. To add a folder include a dash(-) in the filename.
+Example: `ssh-config.symlink`, gets `config` symlinked in `~/.ssh/config`.
 
 ## bugs
 

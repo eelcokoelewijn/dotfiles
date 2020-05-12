@@ -1,0 +1,10 @@
+# Git rebase fixup
+
+git-fixup() {
+  local FIXUP=$1
+  if [ -z $FIXUP ] ; then
+    echo "No commit hash provide to fixup"
+    return
+  fi
+  git rebase -i "$FIXUP^" --autosquash
+}

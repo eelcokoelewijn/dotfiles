@@ -1,0 +1,10 @@
+git-commit() {
+  local SUBJECT=$1
+  local BODY=$2
+  if [ -z $SUBJECT ] || [ ${#SUBJECT} -gt 50 ] ; then
+    echo "No commit subject set or to long(<=50), count:${#SUBJECT}. Use the imperative mood in the subject line."
+    echo "Follow, if applied this commit will: Add, Show, Fix, Remove ...."
+    return
+  fi
+  git commit -ae -m "$SUBJECT" -m "$BODY"
+}

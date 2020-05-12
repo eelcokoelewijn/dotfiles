@@ -1,4 +1,12 @@
 syntax on
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+set wrapmargin=8
+set number
+set textwidth=70
+
+" plugins
+" rainbow
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
+" lightline
+set laststatus=2
