@@ -3,16 +3,19 @@
 # vim + plugins
 #
 # This installs vim.
-
+DIRECTORY="$HOME/.vim/pack/plugins/start"
 if test "$(expr substr $(uname -s) 1 5)" = "Linux"
 then
-  brew install vim
+  echo "  Installing vim for you."
+  sudo dnf install vim
+  if [ ! -d "$DIRECTORY" ]; then
+    mkdir -p $DIRECTORY
+  fi
 fi
 
 # This installs vim-plugins.
 
 # Check for vim
-DIRECTORY="$HOME/.vim/pack/plugins/start"
 if [ -d "$DIRECTORY" ]; then
     echo "  Installing vim plugins for you."
 

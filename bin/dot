@@ -46,19 +46,19 @@ then
 	# Set macOS defaults
     echo "› macOS set defaults"
 	$DOTFILES/macos/set-defaults.sh
+
+	# Install homebrew
+	echo "› brew install"
+	$DOTFILES/homebrew/install.sh 2>&1
+
+	# Upgrade homebrew
+	echo "› brew update"
+	brew update
+
+	# Install all dependencies from Brewfile
+	echo "› brew bundle; installing all dependencies from Brewfile"
+	brew bundle	
 fi
-
-# Install homebrew
-echo "› brew install"
-$DOTFILES/homebrew/install.sh 2>&1
-
-# Upgrade homebrew
-echo "› brew update"
-brew update
-
-# Install all dependencies from Brewfile
-echo "› brew bundle; installing all dependencies from Brewfile"
-brew bundle
 
 # Install rbenv
 $DOTFILES/rbenv/install.sh 2>&1
