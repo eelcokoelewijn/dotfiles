@@ -4,13 +4,15 @@
 #
 # This installs vim.
 DIRECTORY="$HOME/.vim/pack/plugins/start"
+
+if [ ! -d "$DIRECTORY" ]; then
+  mkdir -p $DIRECTORY
+fi
+
 if test "$(expr substr $(uname -s) 1 5)" = "Linux"
 then
   echo "  Installing vim for you."
   sudo dnf install vim
-  if [ ! -d "$DIRECTORY" ]; then
-    mkdir -p $DIRECTORY
-  fi
 fi
 
 # This installs vim-plugins.

@@ -147,6 +147,12 @@ install_dotfiles () {
   done
 }
 
+if [ -f "$HOME/.zshrc" ]
+then
+  info 'backup original .zshrc'
+  mv "$HOME/.zshrc" "$HOME/.zshrc_backup"
+fi
+
 setup_gitconfig
 install_dotfiles
 
