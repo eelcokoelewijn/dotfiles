@@ -4,8 +4,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 
-brew "zsh"
-brew "zsh-completions"
 brew "direnv"
 brew "nodenv"
 brew "rbenv"
