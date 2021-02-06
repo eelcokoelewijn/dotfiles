@@ -2,3 +2,5 @@
 *~
 *.swp
 *.xcuserdatad
+.envrc
+.envrc.*
