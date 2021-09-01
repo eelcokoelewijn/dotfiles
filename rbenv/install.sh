@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # rbenv
 #
@@ -6,21 +6,19 @@
 
 RUBY_VERSION="2.7.2"
 # Check for rbenv
-if test ! $(which rbenv)
-then
+if [[ -z $(command -v rbenv) ]]; then
   echo "  Installing rbenv for you."
   # Install the correct homebrew for each OS type
-  if test "$(uname)" = "Darwin"
-  then
+  if [[ "$(uname)" == "Darwin" ]]; then
     brew install rbenv  
-  elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
-  then
-    sh -c "$(curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer)"
-  fi    
+  elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
+    git clone https://github.com/rbenv/rbenv.git "$HOME/.rbenv"
+    git clone https://github.com/rbenv/ruby-build.git "$HOME/.rbenv/plugins/ruby-build"
+  fi
+  exit 0 
 fi
 
-if [ $(rbenv global) != $RUBY_VERSION ]
-then
+if [[ $(rbenv global) != $RUBY_VERSION ]]; then
   echo "  Installing ruby $RUBY_VERSION"
   rbenv install $RUBY_VERSION
   echo "  Make ruby $RUBY_VERSION the global default."
