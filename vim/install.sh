@@ -11,7 +11,7 @@ fi
 
 if [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
   echo "  Installing vim for you."
-  sudo dnf install vim
+  sudo dnf -y install vim
 fi
 
 # This installs vim-plugins.
