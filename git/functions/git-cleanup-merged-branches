@@ -1,0 +1,14 @@
+git-cleanup-merged-branches() {
+  local BRANCHES=( $(git branch --merged | egrep -v "(^\*|^main$)") )
+  
+  for BRANCH in "${BRANCHES[@]}"
+  do
+    if read -q "?Delete local branch $fg[red]$BRANCH$reset_color? [y|n]"; then  
+        echo ""
+        git branch -d "$BRANCH"
+        echo "Deleted branch $fg[green]$BRANCH$reset_color."
+    else
+      echo ""
+    fi
+  done
+}
