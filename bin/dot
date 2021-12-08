@@ -40,6 +40,7 @@ done
 
 export DOTFILES=$HOME/.dotfiles
 
+SKIP_BREWFILE="YES"
 # If we're on a Mac, let's set some defaults
 if [ "$(uname -s)" == "Darwin" ]
 then
@@ -56,8 +57,10 @@ then
 	brew update
 
 	# Install all dependencies from Brewfile
-	echo "› brew bundle; installing all dependencies from Brewfile"
-	brew bundle	
+	if [[ $SKIP_BREWFILE != "YES" ]]; then
+		echo "› brew bundle; installing all dependencies from Brewfile"
+		brew bundle
+	fi	
 fi
 
 # Install rbenv

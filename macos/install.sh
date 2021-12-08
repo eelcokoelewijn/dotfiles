@@ -1,5 +1,5 @@
-if test ! "$(uname)" = "Darwin"
-  then
+SKIP="YES"
+if [[ "$(uname)" != "Darwin" || $SKIP == "YES" ]]; then
   exit 0
 fi
 

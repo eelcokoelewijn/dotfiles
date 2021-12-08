@@ -4,7 +4,7 @@
 #
 # This installs rbenv.
 
-RUBY_VERSION="2.7.2"
+RUBY_VERSION="2.7.5"
 # Check for rbenv
 if [[ -z $(command -v rbenv) ]]; then
   echo "  Installing rbenv for you."
@@ -15,7 +15,9 @@ if [[ -z $(command -v rbenv) ]]; then
     git clone https://github.com/rbenv/rbenv.git "$HOME/.rbenv"
     git clone https://github.com/rbenv/ruby-build.git "$HOME/.rbenv/plugins/ruby-build"
   fi
-  exit 0 
+  rbenv init
+  echo "  Run $DOTFILES/rbenv/install.sh to install Ruby version $RUBY_VERSION as global default."
+  exit 0
 fi
 
 if [[ $(rbenv global) != $RUBY_VERSION ]]; then
