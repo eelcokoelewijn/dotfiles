@@ -26,7 +26,7 @@ if [[ $(rbenv global) != $RUBY_VERSION ]]; then
   echo "  Make ruby $RUBY_VERSION the global default."
   rbenv global $RUBY_VERSION
 else
-  echo "$RUBY_VERSION already installed and set as global default."
+  echo "  Ruby $RUBY_VERSION already installed and set as global default."
 fi
 
 exit 0

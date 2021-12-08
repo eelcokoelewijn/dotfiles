@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
 # Homebrew
 #
@@ -17,7 +17,7 @@ if [[ -z $(command -v brew) ]]; then
     xcode-select --install
 
     echo "  Installing Homebrew."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" && $SKIP_ON_LINUX != "YES" ]]; then
     echo "  Installing Homebrew aka Linuxbrew."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
