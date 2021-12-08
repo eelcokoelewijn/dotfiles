@@ -79,6 +79,12 @@ Installed using git-clone, see `vim/install.sh`.
 
 ### get started
 
+On macOS; first install the Developer tools:
+
+```sh
+xcode-select --install
+```
+
 ```sh
 git clone https://github.com/eelcokoelewijn/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
