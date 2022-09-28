@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Sets reasonable macOS defaults.
 #
 # Or, in other words, set shit how I like in macOS.
@@ -8,8 +10,8 @@
 # Run ./set-defaults.sh and you'll be good to go.
 
 # check is it a mac
-if test ! "$(uname)" = "Darwin"
-  then
+UNAME="$(uname -s)"
+if [ "$UNAME" != "Darwin" ]; then
   exit 0
 fi
 

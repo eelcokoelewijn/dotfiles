@@ -6,19 +6,21 @@
 # using Homebrew.
 
 SKIP_ON_LINUX="YES"
+UNAME="$(uname -s)"
+UNAMESHORT="${UNAME#1,5}"
 
 # Check for Homebrew
-if [[ -z $(command -v brew) ]]; then
+if [ -z "$(command -v brew)" ]; then
   echo "  Installing Homebrew for you."
 
   # Install the correct homebrew for each OS type
-  if [[ "$(uname)" == "Darwin" ]]; then
+  if [ "$KERNELNAME" = "Darwin" ]; then
     echo "  Installing Xcode commandline tools."
     xcode-select --install
 
     echo "  Installing Homebrew."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" && $SKIP_ON_LINUX != "YES" ]]; then
+  elif [ "$UNAMESHORT" = "Linux" ] && [ $SKIP_ON_LINUX != "YES" ]; then
     echo "  Installing Homebrew aka Linuxbrew."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 

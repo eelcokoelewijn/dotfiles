@@ -1,5 +1,8 @@
+#!/bin/sh
+
 SKIP="YES"
-if [[ "$(uname)" != "Darwin" || $SKIP == "YES" ]]; then
+UNAME="$(uname -s)"
+if [ "$UNAME" != "Darwin" ] || [ $SKIP = "YES" ]; then
   exit 0
 fi
 

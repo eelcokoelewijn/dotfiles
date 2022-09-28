@@ -21,4 +21,4 @@ plugins=(
   direnv
 )
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
