@@ -40,7 +40,6 @@ done
 
 export DOTFILES="$HOME/.dotfiles"
 
-SKIP_BREWFILE="YES"
 UNAME="$(uname -s)"
 # If we're on a Mac, let's set some defaults
 if [ "$UNAME" = "Darwin" ]
@@ -56,17 +55,11 @@ then
 	# Upgrade homebrew
 	echo "› brew update"
 	brew update
-
-	# Install all dependencies from Brewfile
-	if [ $SKIP_BREWFILE != "YES" ]; then
-		echo "› brew bundle; installing all dependencies from Brewfile"
-		brew bundle
-	fi	
 fi
 
 # Install rbenv
 "$DOTFILES/rbenv/install.sh" 2>&1
-# Install zsh
+# Install zsh, will be skipped on macOS
 "$DOTFILES/zsh/install.sh" 2>&1
 
 # Install software
