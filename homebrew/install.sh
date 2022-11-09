@@ -14,7 +14,7 @@ if [ -z "$(command -v brew)" ]; then
   echo "  Installing Homebrew for you."
 
   # Install the correct homebrew for each OS type
-  if [ "$KERNELNAME" = "Darwin" ]; then
+  if [ "$UNAME" = "Darwin" ]; then
     echo "  Installing Xcode commandline tools."
     xcode-select --install
 
