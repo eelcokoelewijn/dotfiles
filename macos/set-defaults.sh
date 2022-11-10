@@ -135,6 +135,9 @@ defaults write com.apple.dock autohide -bool true
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 36
 
+# Set hide recent apps from the Dock
+defaults write com.apple.dock "show-recents" -bool false
+
 ###############################################################################
 # Xcode, Simulator                                                            #
 ###############################################################################

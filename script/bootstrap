@@ -165,5 +165,8 @@ fi
 
 install_dotfiles
 
+echo '  Restarting shell'
+exec zsh
+
 echo ''
 echo '  All installed!'

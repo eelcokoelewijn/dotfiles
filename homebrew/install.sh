@@ -20,6 +20,8 @@ if [ -z "$(command -v brew)" ]; then
 
     echo "  Installing Homebrew."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   elif [ "$UNAMESHORT" = "Linux" ] && [ $SKIP_ON_LINUX != "YES" ]; then
     echo "  Installing Homebrew aka Linuxbrew."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -28,6 +30,8 @@ if [ -z "$(command -v brew)" ]; then
     sudo yum groupinstall 'Development Tools'
     sudo yum install curl file git
     sudo yum install libxcrypt-compat # needed by Fedora 30 and up  
+
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   else
     echo "  Skipped installing Homebrew."
   fi
