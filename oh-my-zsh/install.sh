@@ -12,5 +12,3 @@ if [ ! -d "$DIRECTORY" ]; then
 else
   echo "  Oh my; oh-my-zsh is already installed."
 fi
-
-exit 0

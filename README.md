@@ -59,7 +59,7 @@ Installed using `script/install` or while bootstrapping `script/bootstrap`.
   - list all available versions: `rbenv install -l`
   - install a Ruby version: `rbenv install 2.7.1`
   - select the Ruby version: `rbenv global 2.7.1`
-- [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)(theme: cloud); (plugins: git, rbenv, brew, common-aliases, vscode, swiftpm, direnv); see `oh-my-zsh/config.zsh`. `rbenv` plugin provides `$PATH` setup.
+- [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)(theme: cloud); (plugins: git, rbenv, brew, common-aliases, vscode, swiftpm, direnv); see `oh-my-zsh/config.zsh`.
 - [nodenv](https://github.com/nodenv/nodenv), include in installer script.
 - [direnv](https://direnv.net), include in installer script. Setup handled by oh-my-zsh plugin.
 

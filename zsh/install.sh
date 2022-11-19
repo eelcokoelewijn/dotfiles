@@ -16,5 +16,3 @@ if [ -z "$(command -v zsh)" ]; then
     chsh -s "$(which zsh)"
   fi
 fi
-
-exit 0

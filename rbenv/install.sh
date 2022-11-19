@@ -19,8 +19,8 @@ if [ -z "$(command -v rbenv)" ]; then
     git clone https://github.com/rbenv/ruby-build.git "$HOME/.rbenv/plugins/ruby-build"
   fi
   rbenv init
+  eval "$(rbenv init - zsh)"
   echo "  Run $DOTFILES/rbenv/install.sh to install Ruby version $RUBY_VERSION as global default."
-  exit 0
 fi
 
 if [ "$(rbenv global)" != $RUBY_VERSION ]; then
@@ -31,5 +31,3 @@ if [ "$(rbenv global)" != $RUBY_VERSION ]; then
 else
   echo "  Ruby $RUBY_VERSION already installed and set as global default."
 fi
-
-exit 0

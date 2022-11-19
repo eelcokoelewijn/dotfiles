@@ -16,7 +16,4 @@ if [ -z "$(command -v nodenv)" ]; then
   elif [ "$UNAMESHORT" = "Linux" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer)"
   fi  
-  
 fi
-
-exit 0

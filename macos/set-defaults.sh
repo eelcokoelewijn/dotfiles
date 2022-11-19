@@ -7,6 +7,8 @@
 # The original idea (and a couple settings) were grabbed from:
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 #
+# https://macos-defaults.com/
+#
 # Run ./set-defaults.sh and you'll be good to go.
 
 # check is it a mac

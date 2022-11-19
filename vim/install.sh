@@ -52,5 +52,3 @@ else
     echo "Vim $DIRECTORY doesnt exist, try and run vim first"
     echo "Run ./$HOME/.dotfiles/vim/install.sh to install plugins"
 fi
-
-exit 0
