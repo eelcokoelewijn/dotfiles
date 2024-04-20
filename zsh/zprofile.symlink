@@ -1,0 +1,16 @@
+# Use ~/.zprofile to set the PATH and EDITOR environment variables.
+# Use ~/.zshrc for aliases and a custom prompt, tweaking the appearance and behavior of the terminal.
+# `.zshenv` → `.zprofile` → `.zshrc` → `.zlogin` → `.zlogout`
+
+# shortcut to this dotfiles path is $DOTFILES
+export DOTFILES=$HOME/.dotfiles
+
+# all of our DOTFILES files
+typeset -U config_files
+config_files=($DOTFILES/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done

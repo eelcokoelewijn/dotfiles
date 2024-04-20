@@ -158,6 +158,11 @@ else
   fail "error installing dependencies"
 fi
 
+if [[ -f "$HOME/.zprofile" ]]; then
+  info 'backup original .zprofile'
+  mv "$HOME/.zprofile" "$HOME/.zprofile_backup"
+fi
+
 if [[ -f "$HOME/.zshrc" ]]; then
   info 'backup original .zshrc'
   mv "$HOME/.zshrc" "$HOME/.zshrc_backup"

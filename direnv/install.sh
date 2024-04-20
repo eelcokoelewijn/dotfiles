@@ -12,7 +12,9 @@ if [ -z "$(command -v direnv)" ]; then
   echo "  Installing direnv for you."
   # Install the correct homebrew for each OS type
   if [ "$UNAME" = "Darwin" ]; then
-    brew install direnv  
+    # brew install direnv
+    # Install using Mise global config.
+    mise use -g direnv
   elif [ "$UNAMESHORT" = "Linux" ]; then
     DIRECTORY="$HOME/.local/bin"
     if [ ! -d "$DIRECTORY" ]; then

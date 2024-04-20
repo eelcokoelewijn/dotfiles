@@ -5,37 +5,39 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
-SKIP_ON_LINUX="YES"
-UNAME="$(uname -s)"
-UNAMESHORT="${UNAME#1,5}"
+# Replaced with Mise
 
-# Check for Homebrew
-if [ -z "$(command -v brew)" ]; then
-  echo "  Installing Homebrew for you."
+# SKIP_ON_LINUX="YES"
+# UNAME="$(uname -s)"
+# UNAMESHORT="${UNAME#1,5}"
 
-  # Install the correct homebrew for each OS type
-  if [ "$UNAME" = "Darwin" ]; then
-    echo "  Installing Xcode commandline tools."
-    xcode-select --install
+# # Check for Homebrew
+# if [ -z "$(command -v brew)" ]; then
+#   echo "  Installing Homebrew for you."
 
-    echo "  Installing Homebrew."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#   # Install the correct homebrew for each OS type
+#   if [ "$UNAME" = "Darwin" ]; then
+#     echo "  Installing Xcode commandline tools."
+#     xcode-select --install
 
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  elif [ "$UNAMESHORT" = "Linux" ] && [ $SKIP_ON_LINUX != "YES" ]; then
-    echo "  Installing Homebrew aka Linuxbrew."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#     echo "  Installing Homebrew."
+#     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    echo "  Installing dev-tools."
-    sudo yum groupinstall 'Development Tools'
-    sudo yum install curl file git
-    sudo yum install libxcrypt-compat # needed by Fedora 30 and up  
+#     eval "$(/opt/homebrew/bin/brew shellenv)"
+#   elif [ "$UNAMESHORT" = "Linux" ] && [ $SKIP_ON_LINUX != "YES" ]; then
+#     echo "  Installing Homebrew aka Linuxbrew."
+#     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  else
-    echo "  Skipped installing Homebrew."
-  fi
+#     echo "  Installing dev-tools."
+#     sudo yum groupinstall 'Development Tools'
+#     sudo yum install curl file git
+#     sudo yum install libxcrypt-compat # needed by Fedora 30 and up  
 
-fi
+#     eval "$(/opt/homebrew/bin/brew shellenv)"
+#   else
+#     echo "  Skipped installing Homebrew."
+#   fi
 
-exit 0
+# fi
+
+# exit 0
