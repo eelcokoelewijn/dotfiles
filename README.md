@@ -56,7 +56,7 @@ There's a few special files in the hierarchy.
 
 Installed using `script/install` or while bootstrapping `script/bootstrap`.
 
-- Add section on Mise
+- Uses [Mise](https://mise.jdx.dev/) for tool installation.
 - [Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)(theme: cloud); (plugins: git,
   common-aliases, vscode); see `oh-my-zsh/config.zsh`.
 - [direnv](https://direnv.net), include in installer script.
@@ -64,11 +64,10 @@ Installed using `script/install` or while bootstrapping `script/bootstrap`.
 ### xcode
 
 Xcode installer and version manager
-[xcode-install](https://github.com/xcpretty/xcode-install), include in installer
-script.
+[xcodes](https://github.com/XcodesOrg/xcodes), can be installed using Mise.
 
-- `xcversion list` for xcode-install options, to install an Xcode version:
-  `xcversion install "11.5"`.
+- `xcodes list` for xcode-install options, to install an Xcode version:
+  `xcodes install "15.3"`.
 
 ### vim plugins
 

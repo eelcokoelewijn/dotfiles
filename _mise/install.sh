@@ -8,8 +8,9 @@
 if [ -z "$(command -v "$HOME/.local/bin/mise")" ]; then
   echo "  Installing mise for you."
   curl https://mise.run | sh
+  LOCAL_BIN="$HOME/.local/bin"
   MISE="$HOME/.local/share/mise/shims"
-  export PATH="$MISE:$PATH"
+  export PATH="$MISE:$LOCAL_BIN:$PATH"
 fi
 
 # Plugin       Version     

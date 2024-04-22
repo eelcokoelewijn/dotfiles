@@ -4,24 +4,8 @@
 #
 # This installs direnv.
 
-UNAME="$(uname -s)"
-UNAMESHORT="${UNAME#1,5}"
-
 # Check for direnv
 if [ -z "$(command -v direnv)" ]; then
   echo "  Installing direnv for you."
-  # Install the correct homebrew for each OS type
-  if [ "$UNAME" = "Darwin" ]; then
-    # brew install direnv
-    # Install using Mise global config.
-    mise use -g direnv
-  elif [ "$UNAMESHORT" = "Linux" ]; then
-    DIRECTORY="$HOME/.local/bin"
-    if [ ! -d "$DIRECTORY" ]; then
-      mkdir -p "$DIRECTORY"
-    fi
-    sh -c "$(curl -fsSL https://direnv.net/install.sh)"
-  fi
+  mise use -y -g direnv
 fi
-
-exit 0
