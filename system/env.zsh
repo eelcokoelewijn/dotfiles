@@ -4,6 +4,3 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='vim'
 fi
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"

@@ -14,11 +14,8 @@ ZSH_THEME="af-magic"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  rbenv
-  brew
   common-aliases
   vscode
-  direnv
 )
 
 source "$ZSH/oh-my-zsh.sh"

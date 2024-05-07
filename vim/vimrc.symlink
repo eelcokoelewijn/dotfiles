@@ -10,3 +10,10 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 
 " lightline
 set laststatus=2
+
+" GH Co-pilot config
+let g:copilot_filetypes = {
+    \ 'gitcommit': v:true,
+    \ 'markdown': v:true,
+    \ 'swift': v:true
+    \ }

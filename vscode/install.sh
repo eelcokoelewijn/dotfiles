@@ -9,19 +9,21 @@ if [ -n "$(command -v code)" ]; then
   echo "  VSCode installed."
   EXSTENSIONS=" \
     bierner.markdown-mermaid \
-    bungcip.better-toml \
-    dbaeumer.vscode-eslint \
     eamodio.gitlens \
+    github.copilot \
+    github.copilot-chat \
     esbenp.prettier-vscode \
     GitHub.vscode-pull-request-github \
-    GraphQL.vscode-graphql \
-    GraphQL.vscode-graphql-execution \
-    GraphQL.vscode-graphql-syntax \
-    Orta.vscode-jest \
     redhat.vscode-yaml \
     rust-lang.rust-analyzer \
     svanimpe.stencil \
-    vadimcn.vscode-lldb"
+    meezilla.json \
+    ms-vscode.makefile-tools \
+    rust-lang.rust-analyzer \
+    sswg.swift-lang \
+    tamasfe.even-better-toml \
+    vadimcn.vscode-lldb \
+    waderyan.gitblame"
   for EXSTENSION in $EXSTENSIONS
   do
     echo "  Installing $EXSTENSION extensions"

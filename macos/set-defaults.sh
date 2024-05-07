@@ -11,6 +11,18 @@
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
+if [[ "$EUID" = 0 ]]; then
+    echo "(1) already root"
+else
+    sudo -k # make sure to ask for password on next sudo ✱
+    if sudo true; then
+        echo "(2) correct password"
+    else
+        echo "(3) wrong password"
+        exit 1
+    fi
+fi
+
 # check is it a mac
 UNAME="$(uname -s)"
 if [ "$UNAME" != "Darwin" ]; then
@@ -25,7 +37,7 @@ fi
 defaults write NSGlobalDomain KeyRepeat -int 2s
 
 # Automatically hide menu-bar
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
+defaults write NSGlobalDomain _HIHideMenuBar -bool false
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
