@@ -7,5 +7,5 @@
 # Check for direnv
 if [ -z "$(command -v direnv)" ]; then
   echo "  Installing direnv for you."
-  mise use -y -g direnv
+  mise use -y -g ubi:direnv/direnv
 fi
