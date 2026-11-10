@@ -4,3 +4,9 @@
 *.xcuserdatad
 .envrc
 .envrc.*
+.worktree-map
+plan.md
+tasks/*
+opencode.json
+specs/*
+.goosehints

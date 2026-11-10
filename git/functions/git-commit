@@ -6,5 +6,5 @@ git-commit() {
     echo "Follow, if applied this commit will: Add, Show, Fix, Remove ...."
     return
   fi
-  git commit -ae -m "$SUBJECT" -m "$BODY"
+  git commit -ae -m "$SUBJECT" -m "$BODY" --trailer "Team: $TEAM"
 }

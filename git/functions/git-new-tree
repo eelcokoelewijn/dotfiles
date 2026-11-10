@@ -1,0 +1,9 @@
+git-new-tree() {
+    local branch=$1
+    local branch_name=$(echo "$branch" | tr '/' '-')
+    if [ -z $branch ] && [ -z $WORKTREE_PREFIX ] && [ -z $TEAM ]; then
+        echo "No branch name, worktree-prefix or team specified"
+        return
+    fi
+    git worktree add "../$WORKTREE_PREFIX-$branch_name" -b "$TEAM/$branch"
+}

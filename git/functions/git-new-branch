@@ -1,0 +1,8 @@
+git-new-branch() {
+    local BRANCH_NAME=$1
+    if [ -z $BRANCH_NAME ] && [ -z $TEAM ]; then
+        echo "No branch name or team specified"
+        return
+    fi
+    git checkout -b "$TEAM/$BRANCH_NAME"
+}

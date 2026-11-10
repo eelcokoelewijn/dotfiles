@@ -1,0 +1,9 @@
+git-checkout-branch() {
+    local branch=$1
+    local branch_name=$(echo "$branch" | tr '/' '-')
+    if [ -z $branch ] && [ -z $WORKTREE_PREFIX ]; then
+        echo "No branch name or worktree-prefix specified"
+        return
+    fi
+    git worktree add "../$WORKTREE_PREFIX-$branch_name" "$branch"
+}
